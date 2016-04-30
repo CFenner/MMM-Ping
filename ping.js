@@ -9,7 +9,7 @@ Module.register('ping', {
   defaults: {
     animationSpeed: 1,
     updateInterval: 10,
-    showAlways: true
+    showAlways: false
   },
   payload: {},
   start: function() {
