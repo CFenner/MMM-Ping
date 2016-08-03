@@ -41,7 +41,8 @@ Module.register('ping', {
 	getTranslations: function() {
 		return {
         en: "i18n/en.json",
-        de: "i18n/de.json"
+        de: "i18n/de.json",
+        fr: "i18n/fr.json"
     };
 	},
   getDom: function() {
