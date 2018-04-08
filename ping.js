@@ -58,7 +58,7 @@ Module.register('ping', {
 			element.className = 'status ' + (!this.payload.connected?'dis':'') + 'connected';
 			wrapper.append(element);
 			
-      if(showText){
+      if(this.showText){
         element = document.createElement("span");
         element.innerHTML = this.payload.connected
           ?this.translate("CONNECTED")
