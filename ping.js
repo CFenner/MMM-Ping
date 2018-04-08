@@ -51,24 +51,25 @@ Module.register('ping', {
 	},
   getDom: function() {
     var wrapper = document.createElement("div");
-    if(this.config.showAlways || this.payload.status === "ERROR"){
+    if(this.config.showAlways || this.payload.connected){
       var span;
 			
 			span = document.createElement("div");
-      span.innerHTML = this.payload.status === "ERROR"
+      span.innerHTML = this.payload.connected
         ?this.translate("DISCONNECTED")
         :this.translate("CONNECTED");
       span.className = "bright small";
 			
 			var status = document.createElement('span');
-			status.className = 'status ' + (this.payload.status === "ERROR"?'dis':'') + 'connected';
+			status.className = 'status ' + (this.payload.connected?'dis':'') + 'connected';
 			span.prepend(status);
 			
       wrapper.appendChild(span);
       
 			span = document.createElement("div");
       span.className = "xsmall";
-      span.innerHTML = moment(this.payload.lastConnection).fromNow();
+      //span.innerHTML = moment(this.payload.lastConnection).fromNow();
+      span.innerHTML = moment(this.payload.lastStatusChange).fromNow();
 			
       wrapper.appendChild(span);
     }
