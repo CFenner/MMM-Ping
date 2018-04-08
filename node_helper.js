@@ -23,15 +23,15 @@ module.exports = NodeHelper.create({
           method: 'GET'
         }, function(error, response, body) {
           var status = !error && response.statusCode == 200?"OK":"ERROR";
+          if (status == "OK") {
+            that.lastConnection = new Date();
+          }
           if(that.lastStatus != status){
             that.lastStatusChange = new Date();
           }
           that.lastStatus = status
-          if (that.status == "OK") {
-            that.lastConnection = new Date();
-          }
           that.sendSocketNotification('PING_RESPONSE', {
-            status: that.status,
+            status: that.lastStatus,
             lastConnection: that.lastConnection,
             lastStatusChange: that.lastStatusChange
           });
