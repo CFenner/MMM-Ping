@@ -11,7 +11,7 @@ module.exports = NodeHelper.create({
   start: function () {
     console.log(this.name + ' helper started ...');
     this.lastConnection = 'never';
-    this.lastStatus = '';
+    this.lastStatus = null;
     this.lastStatusChange = 'never';
   },
   socketNotificationReceived: function(notification, payload) {
@@ -22,17 +22,16 @@ module.exports = NodeHelper.create({
           url: 'http://www.google.com',
           method: 'GET'
         }, function(error, response, body) {
-          var status = !error && response.statusCode == 200?"OK":"ERROR";
-          if (status == "OK") {
+          that.connected = !error && response.statusCode == 200;
+          if (that.connected) {
             that.lastConnection = new Date();
           }
-          if(that.lastStatus != status){
+          if(that.lastStatus != that.connected){
+            that.lastStatus = that.connected
             that.lastStatusChange = new Date();
           }
-          that.lastStatus = status
           that.sendSocketNotification('PING_RESPONSE', {
-            status: that.lastStatus,
-            lastConnection: that.lastConnection,
+            connected: that.connected,
             lastStatusChange: that.lastStatusChange
           });
         }
