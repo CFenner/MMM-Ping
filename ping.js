@@ -19,7 +19,7 @@ Module.register('ping', {
   		// refresh every x minutes
   		setInterval(
   			this.update.bind(this),
-  			this.config.updateInterval * 60 * 1000);
+  			this.config.updateInterval);
   },
   update: function() {
       this.sendSocketNotification('PING_REQUEST');
