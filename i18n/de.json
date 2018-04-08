@@ -1,3 +1,5 @@
 {
-  "LAST_ACTIVE_CONNECTION": "letzte aktive Verbindung"
+  "LAST_ACTIVE_CONNECTION": "letzte aktive Verbindung",
+  "CONNTECTED": "verbunden",
+  "DISCONNECTED": "getrennt"
 }
