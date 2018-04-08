@@ -9,7 +9,8 @@ Module.register('ping', {
   defaults: {
     animationSpeed: 1,
     updateInterval: 10,
-    showAlways: false
+    showAlways: false,
+	  showText: true
   },
   payload: {},
   start: function() {
@@ -51,13 +52,22 @@ Module.register('ping', {
   getDom: function() {
     var wrapper = document.createElement("div");
     if(this.config.showAlways || this.payload.status === "ERROR"){
-      var span = document.createElement("div");
+      var span;
+			
+			span = document.createElement("div");
       span.innerHTML = this.translate("LAST_ACTIVE_CONNECTION");
       span.className = "small";
+			
+			var status = document.createElement('span');
+			status.className = 'status';
+			span.prepend(status);
+			
       wrapper.appendChild(span);
-      span = document.createElement("div");
-      span.className = "bright";
+      
+			span = document.createElement("div");
+      span.className = "xsmall";
       span.innerHTML = moment(this.payload.lastConnection).fromNow();
+			
       wrapper.appendChild(span);
     }
     return wrapper;
