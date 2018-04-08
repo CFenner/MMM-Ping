@@ -1,0 +1,18 @@
+.status {
+  width: .25em;
+  height: .25em;
+  display: inline-block;
+  margin: 0 1em 0 1em;
+  border-radius: 50%;
+  vertical-align: middle
+}
+
+.connected {
+  background-color: green;
+  box-shadow: 0 0 .5em .5em green;
+}
+
+.disconnected {
+  background-color: red;
+  box-shadow: 0 0 .5em .5em red;
+}
