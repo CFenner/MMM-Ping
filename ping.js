@@ -55,8 +55,10 @@ Module.register('ping', {
       var span;
 			
 			span = document.createElement("div");
-      span.innerHTML = this.translate("LAST_ACTIVE_CONNECTION");
-      span.className = "small";
+      span.innerHTML = this.payload.status === "ERROR"
+        ?this.translate("DISCONNECTED")
+        :this.translate("CONNECTED");
+      span.className = "bright small";
 			
 			var status = document.createElement('span');
 			status.className = 'status ' + (this.payload.status === "ERROR"?'dis':'') + 'connected';
