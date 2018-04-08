@@ -59,7 +59,7 @@ Module.register('ping', {
       span.className = "small";
 			
 			var status = document.createElement('span');
-			status.className = 'status';
+			status.className = 'status ' + (this.payload.status === "ERROR"?'dis':'') + 'connected';
 			span.prepend(status);
 			
       wrapper.appendChild(span);
