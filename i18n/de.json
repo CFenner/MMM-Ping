@@ -1,5 +1,5 @@
 {
   "LAST_ACTIVE_CONNECTION": "letzte aktive Verbindung",
-  "CONNECTED": "verbunden",
-  "DISCONNECTED": "getrennt"
+  "CONNECTED": "Verbindung hergestellt",
+  "DISCONNECTED": "Verbindung unterbrochen"
 }
