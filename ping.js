@@ -52,26 +52,25 @@ Module.register('ping', {
   getDom: function() {
     var wrapper = document.createElement("div");
     if(this.config.showAlways || !this.payload.connected){
-      var span;
-			
-			span = document.createElement("div");
-      span.innerHTML = this.payload.connected
-        ?this.translate("CONNECTED")
-        :this.translate("DISCONNECTED");
-      span.className = "bright small";
-			
-			var status = document.createElement('span');
-			status.className = 'status ' + (!this.payload.connected?'dis':'') + 'connected';
-			span.prepend(status);
-			
-      wrapper.appendChild(span);
+			var element;
       
-			span = document.createElement("div");
-      span.className = "xsmall";
-      //span.innerHTML = moment(this.payload.lastConnection).fromNow();
-      span.innerHTML = moment(this.payload.lastStatusChange).fromNow();
+			element = document.createElement('span');
+			element.className = 'status ' + (!this.payload.connected?'dis':'') + 'connected';
+			wrapper.append(element);
 			
-      wrapper.appendChild(span);
+      if(showText){
+        element = document.createElement("span");
+        element.innerHTML = this.payload.connected
+          ?this.translate("CONNECTED")
+          :this.translate("DISCONNECTED");
+        element.className = "bright small";
+        wrapper.appendChild(element);
+      }
+      
+			element = document.createElement("div");
+      element.className = "xsmall";
+      element.innerHTML = moment(this.payload.lastStatusChange).fromNow();
+      wrapper.appendChild(element);
     }
     return wrapper;
   }
