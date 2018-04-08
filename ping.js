@@ -7,7 +7,7 @@
  */
 Module.register('ping', {
   defaults: {
-    animationSpeed: 1,
+    animationSpeed: 0,
     updateInterval: 10,
     showAlways: false,
     showText: true
@@ -16,10 +16,10 @@ Module.register('ping', {
   start: function() {
       Log.info('Starting module: ' + this.name);
       this.update();
-  		// refresh every x minutes
+  		// refresh every x seconds
   		setInterval(
   			this.update.bind(this),
-  			this.config.updateInterval);
+  			this.config.updateInterval * 1000);
   },
   update: function() {
       this.sendSocketNotification('PING_REQUEST');
