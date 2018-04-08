@@ -10,7 +10,7 @@ Module.register('ping', {
     animationSpeed: 1,
     updateInterval: 10,
     showAlways: false,
-	  showText: true
+    showText: true
   },
   payload: {},
   start: function() {
@@ -58,12 +58,12 @@ Module.register('ping', {
 			element.className = 'status ' + (!this.payload.connected?'dis':'') + 'connected';
 			wrapper.append(element);
 			
-      if(this.showText){
+      if(this.config.showText){
         element = document.createElement("span");
         element.innerHTML = this.payload.connected
           ?this.translate("CONNECTED")
           :this.translate("DISCONNECTED");
-        element.className = "bright small";
+        element.className = "bright small text";
         wrapper.appendChild(element);
       }
       
