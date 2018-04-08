@@ -33,7 +33,9 @@ Module.register('ping', {
       }
   },
   getStyles: function() {
-      return [];
+    return [
+      'ping.css'
+    ];
   },
 	getScripts: function() {
 		return ["moment.js"];
