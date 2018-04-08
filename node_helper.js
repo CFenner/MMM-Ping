@@ -13,9 +13,11 @@ module.exports = NodeHelper.create({
     this.lastConnection = 'never';
     this.lastStatus = null;
     this.lastStatusChange = 'never';
+    this.check()
     setTimeout(this.check, 5 * 60 * 1000);
   },
   check: function(){
+        console.log(this.name + ' update called ...');
     var that = this;
     request({
         url: 'http://www.google.com',
