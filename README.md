@@ -11,7 +11,7 @@ Go to your MagicMirror folder.
 
 ```
 cd MagicMirror
-`
+```
 
 Clone the repository.
 
