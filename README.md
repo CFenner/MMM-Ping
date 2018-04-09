@@ -9,11 +9,15 @@ Module to display the network connection on the MagicMirror.
 
 Go to your MagicMirror folder.
 
-`cd MagicMirror`
+```
+cd MagicMirror
+`
 
 Clone the repository.
 
-`git clone https://github.com/CFenner/MagicMirror-Ping-Module.git modules/ping`
+```
+git clone https://github.com/CFenner/MagicMirror-Ping-Module.git modules/ping
+```
 
 ## Configuration
 
