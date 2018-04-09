@@ -1,11 +1,9 @@
 # MagicMirror-Ping-Module
-<p>
-<a href="http://choosealicense.com/licenses/mit"><img src="https://img.shields.io/badge/license-MIT-blue.svg" alt="License"></a>
-</p>
+[![License](https://img.shields.io/badge/license-MIT-blue.svg)](http://choosealicense.com/licenses/mit)
 
-Module to check the network connection on the MagicMirror.
+Module to display the network connection on the MagicMirror.
 
-![Sonos Module](https://github.com/CFenner/MagicMirror-Ping-Module/blob/master/.github/preview.png)
+![Ping Module](https://github.com/CFenner/MagicMirror-Ping-Module/blob/master/.github/preview.png)
 
 ## Installation
 
@@ -32,5 +30,6 @@ Add module configuration to config.js.
 |Option|Description|
 |---|---|
 |`showAlways`|Should the status always be shown or just if the connection is lost?<br><br>**Default value:** `false`|
-|`updateInterval`|How often does the content needs to be fetched? (Minutes)<br><br>**Default value:** `10`|
-|`animationSpeed`|Speed of the update animation. (Seconds)<br><br>**Default value:** `1`|
+|`showText`|Should the status text be shown or just the status icon?<br><br>**Default value:** `true`|
+|`updateInterval`|How often does the content needs to be fetched? (Seconds)<br><br>**Default value:** `10`|
+|`animationSpeed`|Speed of the update animation. (Seconds)<br><br>**Default value:** `0`|
