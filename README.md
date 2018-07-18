@@ -6,7 +6,7 @@
 Module to check the network connection on the MagicMirror.
 
 ![Ping Module](https://github.com/CFenner/MagicMirror-Ping-Module/blob/master/.github/preview.png)
-![Ping Module](https://github.com/AgP42/MagicMirror-Ping-Module/blob/master/.github/ping.png)
+![Ping Module](https://github.com/AgP42/MMM-Ping/blob/master/.github/ping.png)
 
 ## Installation
 
