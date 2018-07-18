@@ -5,7 +5,8 @@
 
 Module to check the network connection on the MagicMirror.
 
-![Sonos Module](https://github.com/CFenner/MagicMirror-Ping-Module/blob/master/.github/preview.png)
+![Ping Module](https://github.com/CFenner/MagicMirror-Ping-Module/blob/master/.github/preview.png)
+![Ping Module](https://github.com/AgP42/MagicMirror-Ping-Module/blob/master/.github/ping.png)
 
 ## Installation
 
@@ -29,8 +30,23 @@ Add module configuration to config.js.
 },
 ```
 
+```js
+                {
+                        module: 'ping',
+                        position: 'top_left',
+                        header: "Surveillance WiFi",
+                        config: {
+                                updateInterval: 1,
+                                showAlways: true,
+                                showAbsoluteTime: true
+                        }
+                },
+```
+
 |Option|Description|
 |---|---|
 |`showAlways`|Should the status always be shown or just if the connection is lost?<br><br>**Default value:** `false`|
 |`updateInterval`|How often does the content needs to be fetched? (Minutes)<br><br>**Default value:** `10`|
 |`animationSpeed`|Speed of the update animation. (Seconds)<br><br>**Default value:** `1`|
+|`showAbsoluteTime`|Add or not the last Absolute Time where the ping was successfull. In case of total freeze of the screen, still possible to know the last update<br><br>**Default value:** `false`|
+|`AbsoluteTimeFormat`|Format to display the AbsoluteTime<br><br>**Default value:** `dd - HH:mm:ss`|
