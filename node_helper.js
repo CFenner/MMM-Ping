@@ -10,7 +10,8 @@ var request = require('request');
 module.exports = NodeHelper.create({
   start: function () {
     console.log(this.name + ' helper started ...');
-    this.lastConnection = 'never';
+    this.lastConnection = 0; //in 1970, long time ago without a valid ping on google... did google exist ? ;-)
+	//so after a first RPI reboot without successfull ping, the reboot delay will be "config.updateInterval" and not "config.rebootDelay"
   },
   socketNotificationReceived: function(notification, payload) {
     //console.log(notification);
@@ -30,5 +31,10 @@ module.exports = NodeHelper.create({
         }
       );
     }
+    //Log the reboot on pm2 out log, here : /home/pi/.pm2/logs
+    if (notification === 'LOG_REBOOT') {
+		console.log("RPI reboot requested at : " + payload + " GMT, after too long time without successfull PING");
+    }
+    
   }
 });
