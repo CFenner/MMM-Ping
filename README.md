@@ -38,7 +38,9 @@ Add module configuration to config.js.
                         config: {
                                 updateInterval: 1,
                                 showAlways: true,
-                                showAbsoluteTime: true
+                                showAbsoluteTime: true,
+                                rebootIfNoPing: false, 
+	                             rebootDelay: 20
                         }
                 },
 ```
@@ -50,3 +52,5 @@ Add module configuration to config.js.
 |`animationSpeed`|Speed of the update animation. (Seconds)<br><br>**Default value:** `1`|
 |`showAbsoluteTime`|Add or not the last Absolute Time where the ping was successfull. In case of total freeze of the screen, still possible to know the last update<br><br>**Default value:** `false`|
 |`AbsoluteTimeFormat`|Format to display the AbsoluteTime<br><br>**Default value:** `dd - HH:mm:ss`|
+|`rebootIfNoPing`|should we ask the RPI to reboot if no ping during some delay ?<br><br>**Default value:** `false`|
+|`rebootDelay`|Delay for reboot request if rebootIfNoPing=true <br><br>**Default value:** `20`|
