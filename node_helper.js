@@ -10,7 +10,7 @@ var request = require('request');
 module.exports = NodeHelper.create({
   start: function () {
     console.log(this.name + ' helper started ...');
-    this.lastConnection = 'never';
+    this.lastConnection = new Date(); //We consider a success at start-up
   },
   socketNotificationReceived: function(notification, payload) {
     //console.log(notification);
@@ -30,5 +30,10 @@ module.exports = NodeHelper.create({
         }
       );
     }
+    //Log the reboot on pm2 out log, here : /home/pi/.pm2/logs
+    if (notification === 'LOG_REBOOT') {
+		console.log("RPI reboot requested at : " + payload + " GMT, after too long time without successfull PING");
+    }
+    
   }
 });
