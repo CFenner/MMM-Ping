@@ -10,8 +10,7 @@ var request = require('request');
 module.exports = NodeHelper.create({
   start: function () {
     console.log(this.name + ' helper started ...');
-    this.lastConnection = 0; //in 1970, long time ago without a valid ping on google... did google exist ? ;-)
-	//so after a first RPI reboot without successfull ping, the reboot delay will be "config.updateInterval" and not "config.rebootDelay"
+    this.lastConnection = new Date(); //We consider a success at start-up
   },
   socketNotificationReceived: function(notification, payload) {
     //console.log(notification);
